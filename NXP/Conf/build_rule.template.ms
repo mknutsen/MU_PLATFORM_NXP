@@ -172,7 +172,7 @@
         $(OUTPUT_DIR)(+)${s_dir}(+)${s_base}.obj
 
     <Command.GCC, Command.GCCLD, Command.RVCT>
-        "$(CC)" $(CC_FLAGS) $(CC_XIPFLAGS) -c -o ${dst} $(INC) ${src}
+        "$(CC)" $(CC_FLAGS) -c -o ${dst} $(INC) ${src}
 
 [C-Header-File]
     <InputFile>
@@ -384,7 +384,7 @@
         $(DEBUG_DIR)(+)$(MODULE_NAME).dll
 
     <Command.GCC>
-        "$(DLINK)" -o ${dst} $(DLINK_FLAGS) $(DLINK_XIPFLAGS) -Wl,--start-group,@$(STATIC_LIBRARY_FILES_LIST),--end-group $(CC_FLAGS) $(DLINK2_FLAGS)
+        "$(DLINK)" -o ${dst} $(DLINK_FLAGS) -Wl,--start-group,@$(STATIC_LIBRARY_FILES_LIST),--end-group $(CC_FLAGS) $(DLINK2_FLAGS)
         "$(OBJCOPY)" $(OBJCOPY_FLAGS) ${dst}
 
 
