@@ -384,7 +384,7 @@
         $(DEBUG_DIR)(+)$(MODULE_NAME).dll
 
     <Command.GCC>
-        "$(DLINK)" -o ${dst} $(DLINK_FLAGS) $(DLINK_XIPFLAGS) -Wl,--start-group,@$(STATIC_LIBRARY_FILES_LIST),--end-group $(CC_FLAGS) $(CC_XIPFLAGS) $(DLINK2_FLAGS)
+        "$(DLINK)" -o ${dst} $(DLINK_FLAGS) $(DLINK_XIPFLAGS) -Wl,--start-group,@$(STATIC_LIBRARY_FILES_LIST),--end-group $(CC_FLAGS) $(DLINK2_FLAGS)
         "$(OBJCOPY)" $(OBJCOPY_FLAGS) ${dst}
 
 
