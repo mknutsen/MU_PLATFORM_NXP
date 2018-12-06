@@ -39,14 +39,17 @@
 !include Silicon/ARM/NXP/iMX8Pkg/iMX8CommonDsc.inc
 
 [LibraryClasses.common]
+  MsAltBootLib|OemPkg/Library/MsAltBootLib/MsAltBootLib.inf
   HwResetSystemLib|ArmPkg/Library/ArmSmcPsciResetSystemLib/ArmSmcPsciResetSystemLib.inf
   MsBootOptionsLib|PcBdsPkg/Library/MsBootOptionsLib/MsBootOptionsLib.inf
   MsColorTableLib|MsGraphicsPkg/Library/MsColorTableLib/MsColorTableLib.inf
   GraphicsConsoleHelperLib|PcBdsPkg/Library/GraphicsConsoleHelperNullLib/GraphicsConsoleHelperNullLib.inf
+  MsNetworkDependencyLib|PcBdsPkg/Library/MsNetworkDependencyLib/MsNetworkDependencyLib.inf
   MsNVBootReasonLib|PcBdsPkg/Library/MsNVBootReasonNullLib/MsNVBootReasonNullLib.inf
   MsPlatformDevicesLib|PcBdsPkg/Library/MsPlatformDevicesNullLib/MsPlatformDevicesNullLib.inf
   MathLib|MsCorePkg/Library/MathLib/MathLib.inf
   BootGraphicsLib|MsGraphicsPkg/Library/BootGraphicsLibNull/BootGraphicsLib.inf
+  MsBootManagerSettingsLib|PcBdsPkg/Library/MsBootManagerSettingsDxeLib/MsBootManagerSettingsDxeLib.inf
   SwmDialogsLib|MsGraphicsPkg/Library/SwmDialogsLib/SwmDialogs.inf
   BootGraphicsProviderLib|MsGraphicsPkg/Library/BootGraphicsProviderLibNull/BootGraphicsProviderLib.inf
   MsBootPolicyLib|OemPkg/Library/MsBootPolicyLib/MsBootPolicyLib.inf
