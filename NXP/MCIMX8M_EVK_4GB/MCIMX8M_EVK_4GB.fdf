@@ -90,7 +90,7 @@ FvNameGuid         = B73FE497-B92E-416e-8326-45AD0D270092
   INF MdeModulePkg/Universal/PCD/Dxe/Pcd.inf
   INF Common/MU_OEM_SAMPLE/OemPkg/BootMenu/BootMenu.inf
   INF Common/MU_OEM_SAMPLE/OemPkg/FrontPage/FrontPage.inf
-  INF PcBdsPkg/MsBootPolicy/MsBootPolicy.inf
+  #INF PcBdsPkg/MsBootPolicy/MsBootPolicy.inf
 
   #
   # PI DXE Drivers producing Architectural Protocols (EFI Services)

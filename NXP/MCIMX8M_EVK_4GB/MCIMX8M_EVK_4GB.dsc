@@ -39,6 +39,9 @@
 !include Silicon/ARM/NXP/iMX8Pkg/iMX8CommonDsc.inc
 
 [LibraryClasses.common]
+  DeviceBootManagerLib|iMXPlatformPkg/Library/DeviceBootManagerLib/DeviceBootManagerLib.inf
+ #DeviceBootManagerLib|PcBdsPkg/Library/DeviceBootManagerLib/DeviceBootManagerLib.inf
+
   MsAltBootLib|OemPkg/Library/MsAltBootLib/MsAltBootLib.inf
   HwResetSystemLib|ArmPkg/Library/ArmSmcPsciResetSystemLib/ArmSmcPsciResetSystemLib.inf
   MsBootOptionsLib|PcBdsPkg/Library/MsBootOptionsLib/MsBootOptionsLib.inf
@@ -57,7 +60,6 @@
   MsUiThemeLib|MsGraphicsPkg/Library/MsUiThemeLib/Dxe/MsUiThemeLib.inf
   SafeIntLib|MdePkg/Library/BaseSafeIntLib/BaseSafeIntLib.inf
   UIToolKitLib|MsGraphicsPkg/Library/SimpleUIToolKit/SimpleUIToolKit.inf
-  DeviceBootManagerLib|iMXPlatformPkg/Library/DeviceBootManagerLib/DeviceBootManagerLib.inf
   #HwResetSystemLib|MdeModulePkg/Library/BaseResetSystemLibNull/BaseResetSystemLibNull.inf     ## MS_CHANGE
   ResetUtilityLib|MdeModulePkg/Library/ResetUtilityLib/ResetUtilityLib.inf
   BaseBinSecurityLib|MdePkg/Library/BaseBinSecurityLibNull/BaseBinSecurityLibNull.inf
@@ -325,4 +327,4 @@
   # Surface Boot Manager (Menu) application
   OemPkg/BootMenu/BootMenu.inf
 
-  PcBdsPkg/MsBootPolicy/MsBootPolicy.inf
+  #PcBdsPkg/MsBootPolicy/MsBootPolicy.inf
