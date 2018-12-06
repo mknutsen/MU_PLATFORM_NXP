@@ -317,8 +317,9 @@
   MdeModulePkg/Universal/EbcDxe/EbcDxe.inf
 
   # Surface FrontPage application.
-  #Common/MU_OEM_SAMPLE/OemPkg/FrontPage/FrontPage.inf
+  OemPkg/FrontPage/FrontPage.inf
 
   # Surface Boot Manager (Menu) application
-  #Common/MU_OEM_SAMPLE/OemPkg/BootMenu/BootMenu.inf
+  OemPkg/BootMenu/BootMenu.inf
 
+  PcBdsPkg/MsBootPolicy/MsBootPolicy.inf
