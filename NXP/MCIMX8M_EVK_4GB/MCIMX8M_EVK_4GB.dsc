@@ -120,6 +120,8 @@
   gEfiMdeModulePkgTokenSpaceGuid.PcdTurnOffUsbLegacySupport|TRUE
 
 [PcdsFixedAtBuild.common]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdBootManagerInBootOrder|FALSE
+  gEfiMdeModulePkgTokenSpaceGuid.PcdPlatformRecoverySupported|FALSE
   gEfiMdeModulePkgTokenSpaceGuid.PcdBootManagerMenuFile|{ 0x8A, 0x70, 0x42, 0x40, 0x2D, 0x0F, 0x23, 0x48, 0xAC, 0x60, 0x0D, 0x77, 0xB3, 0x11, 0x18, 0x89 }
 
   gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0x2F
