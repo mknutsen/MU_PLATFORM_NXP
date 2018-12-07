@@ -39,6 +39,12 @@
 !include Silicon/ARM/NXP/iMX8Pkg/iMX8CommonDsc.inc
 
 [LibraryClasses.common]
+  MsUefiVersionLib|OemPkg/Library/MsUefiVersionLib/MsUefiVersionLib.inf
+  ThermalServicesLib|PcBdsPkg/Library/ThermalServicesLibNull/ThermalServicesLibNull.inf
+  PowerServicesLib|PcBdsPkg/Library/PowerServicesLibNull/PowerServicesLibNull.inf
+  MsPlatformPowerCheckLib|PcBdsPkg/Library/MsPlatformPowerCheckNullLib/MsPlatformPowerCheckNullLib.inf
+  ConsoleMsgLib|PcBdsPkg/Library/ConsoleMsgNullLib/ConsoleMsgNullLib.inf
+  GraphicConsoleHelperLib|PcBdsPkg/Library/GraphicConsoleHelperLib/GraphicConsoleHelper.inf
   DeviceStateLib|MsCorePkg/Library/DeviceStateLib/DeviceStateLib.inf
   DeviceBootManagerLib|iMXPlatformPkg/Library/DeviceBootManagerLib/DeviceBootManagerLib.inf
  #DeviceBootManagerLib|PcBdsPkg/Library/DeviceBootManagerLib/DeviceBootManagerLib.inf
@@ -301,7 +307,7 @@
   #
   MdeModulePkg/Universal/SmbiosDxe/SmbiosDxe.inf
   NXP/MCIMX8M_EVK_4GB/Drivers/SmbiosPlatformDxe/SmbiosPlatformDxe.inf
-
+  MsGraphicsPkg/MsUiTheme/Dxe/MsUiThemeProtocol.inf
   #
   # Bds
   #
@@ -310,7 +316,11 @@
   MdeModulePkg/Universal/SetupBrowserDxe/SetupBrowserDxe.inf
   MdeModulePkg/Universal/BdsDxe/BdsDxe.inf {
     <LibraryClasses>
+      #DeviceBootManagerLib|PcBdsPkg/Library/DeviceBootManagerLib/DeviceBootManagerLib.inf
       PlatformBootManagerLib|MsCorePkg/Library/PlatformBootManagerLib/PlatformBootManagerLib.inf
+      PlatformHookLib|MdeModulePkg/Library/BasePlatformHookLibNull/BasePlatformHookLibNull.inf
+    <PcdsFixedAtBuild>
+      gPcBdsPkgTokenSpaceGuid.PcdBdsBootPolicy|TRUE
   }
   MdeModulePkg/Application/UiApp/UiApp.inf {
     <LibraryClasses>
