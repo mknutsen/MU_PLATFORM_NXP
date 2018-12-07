@@ -226,6 +226,6 @@ ArmPlatformInitialize (
 EFI_BOOT_MODE
 ArmPlatformGetBootMode (VOID)
 {
-  return BOOT_WITH_FULL_CONFIGURATION;
+  return BOOT_WITH_DEFAULT_SETTINGS;
 }
 
