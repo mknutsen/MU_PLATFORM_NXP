@@ -43,6 +43,7 @@
   ThermalServicesLib|PcBdsPkg/Library/ThermalServicesLibNull/ThermalServicesLibNull.inf
   PowerServicesLib|PcBdsPkg/Library/PowerServicesLibNull/PowerServicesLibNull.inf
   MsPlatformPowerCheckLib|PcBdsPkg/Library/MsPlatformPowerCheckNullLib/MsPlatformPowerCheckNullLib.inf
+  PlatformThemeLib|MsGraphicsPkg/Library/SamplePlatformThemeLib/PlatformThemeLib.inf
   ConsoleMsgLib|PcBdsPkg/Library/ConsoleMsgNullLib/ConsoleMsgNullLib.inf
   GraphicsConsoleHelperLib|PcBdsPkg/Library/GraphicsConsoleHelperLib/GraphicsConsoleHelper.inf
   DeviceStateLib|MsCorePkg/Library/DeviceStateLib/DeviceStateLib.inf
@@ -306,7 +307,10 @@
   #
   MdeModulePkg/Universal/SmbiosDxe/SmbiosDxe.inf
   NXP/MCIMX8M_EVK_4GB/Drivers/SmbiosPlatformDxe/SmbiosPlatformDxe.inf
-  MsGraphicsPkg/MsUiTheme/Dxe/MsUiThemeProtocol.inf
+  MsGraphicsPkg/MsUiTheme/Dxe/MsUiThemeProtocol.inf {
+    <LibraryClasses>
+       MsThemeCopyLib|MsGraphicsPkg/Library/MsUiThemeCopyLib/MsUiThemeCopyLib.inf
+  }
   #
   # Bds
   #
