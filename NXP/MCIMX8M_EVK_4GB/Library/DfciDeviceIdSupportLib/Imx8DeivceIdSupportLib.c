@@ -70,7 +70,7 @@ DfciIdSupportGetManufacturer (
     UINTN    *ManufacturerSize   OPTIONAL
   ) {
     CHAR8* name = "NXP";
-    *ManufacturerSize = AsciiStrnSizeS(name);
+    *ManufacturerSize = AsciiStrnSizeS(name, 50);
     *Manufacturer = AllocateCopyPool(*ManufacturerSize, name);
     return EFI_SUCCESS;
 }
@@ -92,7 +92,7 @@ DfciIdSupportGetProductName (
     UINTN    *ProductNameSize  OPTIONAL
   ) {
     CHAR8* name = "IMX8";
-    *ProductNameSize = AsciiStrnSizeS(name);
+    *ProductNameSize = AsciiStrnSizeS(name, 50);
     *ProductName = AllocateCopyPool(*ProductNameSize, name);
     return EFI_SUCCESS;
 }
@@ -114,7 +114,7 @@ DfciIdSupportGetSerialNumber (
     UINTN    *SerialNumberSize  OPTIONAL
   ) {
     CHAR8* serialNumber = "1";
-    *SerialNumberSize = AsciiStrnSizeS(serialNumber);
+    *SerialNumberSize = AsciiStrnSizeS(serialNumber, 50);
     *SerialNumber = AllocateCopyPool(*SerialNumberSize, serialNumber);
     return EFI_SUCCESS;
 }
@@ -136,7 +136,7 @@ DfciIdSupportGetUuid (
     UINTN    *UuidSize  OPTIONAL
   ) {
     CHAR8* uuid = "{0BC8D9D3-D9F6-4C25-92CB-2C63C47977A7}"; // fake
-    *UuidSize = AsciiStrnSizeS(uuid);
+    *UuidSize = AsciiStrnSizeS(uuid, 50);
     *Uuid = AllocateCopyPool(*UuidSize, uuid);
     return EFI_SUCCESS;
 }
