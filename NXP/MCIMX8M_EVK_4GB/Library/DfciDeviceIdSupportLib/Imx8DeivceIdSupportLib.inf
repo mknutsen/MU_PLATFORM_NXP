@@ -31,7 +31,7 @@
 
 [Defines]
   INF_VERSION         = 0x00010017
-  BASE_NAME           = DfciUiSupportLibNull
+  BASE_NAME           = Imx8DeivceIdSupportLib
   FILE_GUID           = 59260ec4-b841-4c02-abb6-1b20ef7451eb
   VERSION_STRING      = 1.0
   MODULE_TYPE         = DXE_DRIVER
