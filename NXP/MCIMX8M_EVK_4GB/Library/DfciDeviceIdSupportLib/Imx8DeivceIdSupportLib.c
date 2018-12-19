@@ -50,6 +50,7 @@ EFIAPI
 DfciIdSupportV1GetSerialNumber(
   OUT UINTN*  SerialNumber
   ) {
+    DEBUG((DEBUG_INFO, "%a - \n", __FUNCTION__));
    *SerialNumber = 1;
    return EFI_SUCCESS;
 }
@@ -70,9 +71,15 @@ DfciIdSupportGetManufacturer (
     CHAR8   **Manufacturer,
     UINTN    *ManufacturerSize   OPTIONAL
   ) {
+    DEBUG((DEBUG_INFO, "%a - \n", __FUNCTION__));
     CHAR8* name = "NXP";
-    *ManufacturerSize = AsciiStrnSizeS(name, 50);
-    *Manufacturer = AllocateCopyPool(*ManufacturerSize, name);
+    UINTN size = AsciiStrnSizeS(name, 50);
+    *Manufacturer = AllocateCopyPool(size, name);
+    DEBUG((DEBUG_INFO, "%a - \n", name));
+
+    if (ManufacturerSize) {
+      *ManufacturerSize = size;
+    }
     return EFI_SUCCESS;
 }
 
@@ -93,8 +100,12 @@ DfciIdSupportGetProductName (
     UINTN    *ProductNameSize  OPTIONAL
   ) {
     CHAR8* name = "IMX8";
-    *ProductNameSize = AsciiStrnSizeS(name, 50);
-    *ProductName = AllocateCopyPool(*ProductNameSize, name);
+    UINTN size = AsciiStrnSizeS(name, 50);
+    *ProductName = AllocateCopyPool(size, name);
+    DEBUG((DEBUG_INFO, "%a - %a\n", __FUNCTION__, *ProductName));
+    if (ProductNameSize) {
+      *ProductNameSize = size;
+    }
     return EFI_SUCCESS;
 }
 
@@ -115,8 +126,12 @@ DfciIdSupportGetSerialNumber (
     UINTN    *SerialNumberSize  OPTIONAL
   ) {
     CHAR8* serialNumber = "1";
-    *SerialNumberSize = AsciiStrnSizeS(serialNumber, 50);
-    *SerialNumber = AllocateCopyPool(*SerialNumberSize, serialNumber);
+    UINTN size = AsciiStrnSizeS(serialNumber, 50);
+    *SerialNumber = AllocateCopyPool(size, serialNumber);
+    DEBUG((DEBUG_INFO, "%a - %a\n", __FUNCTION__, *SerialNumber));
+    if (SerialNumberSize) {
+      *SerialNumberSize = size;
+    }
     return EFI_SUCCESS;
 }
 
@@ -137,7 +152,11 @@ DfciIdSupportGetUuid (
     UINTN    *UuidSize  OPTIONAL
   ) {
     CHAR8* uuid = "{0BC8D9D3-D9F6-4C25-92CB-2C63C47977A7}"; // fake
-    *UuidSize = AsciiStrnSizeS(uuid, 50);
-    *Uuid = AllocateCopyPool(*UuidSize, uuid);
+    UINTN size = AsciiStrnSizeS(uuid, 50);
+    *Uuid = AllocateCopyPool(size, uuid);
+    DEBUG((DEBUG_INFO, "%a - %a\n", __FUNCTION__, *Uuid));
+    if (UuidSize) {
+      *UuidSize = size;
+    }
     return EFI_SUCCESS;
 }
