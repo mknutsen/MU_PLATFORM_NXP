@@ -56,7 +56,7 @@
   DebugLib
   BaseLib
   BaseMemoryLib
-
+  MemoryAllocationLib
 
 [Protocols]
 
@@ -70,4 +70,4 @@
 
 [BuildOptions]
 #  DEBUG_*_*_CC_FLAGS  = /Od /FAcs
-  DEBUG_*_*_CC_FLAGS  = /analyze
+#  DEBUG_*_*_CC_FLAGS  = /analyze

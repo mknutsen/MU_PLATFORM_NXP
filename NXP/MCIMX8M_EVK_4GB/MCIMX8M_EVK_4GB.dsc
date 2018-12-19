@@ -39,6 +39,41 @@
 !include Silicon/ARM/NXP/iMX8Pkg/iMX8CommonDsc.inc
 
 [LibraryClasses.common]
+  IntrinsicLib|CryptoPkg/Library/IntrinsicLib/IntrinsicLib.inf
+  DfciUiSupportLib|DfciPkg/Library/DfciUiSupportLibNull/DfciUiSupportLibNull.inf
+  DfciRecoveryLib|DfciPkg/Library/DfciRecoveryLib/DfciRecoveryLib.inf
+  OpensslLib|CryptoPkg/Library/OpensslLib/OpensslLib.inf
+  DfciPasswordLib|DfciPkg/Library/DfciPasswordLib/DfciPasswordLib.inf
+  BaseCryptLib|CryptoPkg/Library/BaseCryptLib/BaseCryptLib.inf
+  DfciDeviceIdSupportLib|NXP/MCIMX8M_EVK_4GB/Library/DfciDeviceIdSupportLib/Imx8DeivceIdSupportLib.inf
+  XmlTreeQueryLib|XmlSupportPkg/Library/XmlTreeQueryLib/XmlTreeQueryLib.inf
+  XmlTreeLib|XmlSupportPkg/Library/XmlTreeLib/XmlTreeLib.inf
+  DfciV1SupportLib|DfciPkg/Library/DfciV1SupportLibNull/DfciV1SupportLibNull.inf
+  #
+  # Library instance that understands the MsXml Settings Schema and providers helper functions
+  #
+  DfciXmlSettingSchemaSupportLib|DfciPkg/Library/DfciXmlSettingSchemaSupportLib/DfciXmlSettingSchemaSupportLib.inf
+
+  #
+  # Library instance that understands the MsXml Permission Schema and providers helper functions
+  #
+  DfciXmlPermissionSchemaSupportLib|DfciPkg/Library/DfciXmlPermissionSchemaSupportLib/DfciXmlPermissionSchemaSupportLib.inf
+
+  #
+  # Library instance that understands the MsXml Device Id Schema and providers helper functions
+  #
+  DfciXmlDeviceIdSchemaSupportLib|DfciPkg/Library/DfciXmlDeviceIdSchemaSupportLib/DfciXmlDeviceIdSchemaSupportLib.inf
+
+  #
+  # Library instance that understands the MsXml Device Id Schema and providers helper functions
+  #
+  DfciXmlIdentitySchemaSupportLib|DfciPkg/Library/DfciXmlIdentitySchemaSupportLib/DfciXmlIdentitySchemaSupportLib.inf
+
+  #
+  # Library instance that understands Zero Touch
+  #
+  ZeroTouchSettingsLib|ZeroTouchPkg/Library/ZeroTouchSettings/ZeroTouchSettings.inf
+
   MsUiThemeCopyLib|MsGraphicsPkg/Library/MsUiThemeCopyLib/MsUiThemeCopyLib.inf
   MsUefiVersionLib|OemPkg/Library/MsUefiVersionLib/MsUefiVersionLib.inf
   ThermalServicesLib|PcBdsPkg/Library/ThermalServicesLibNull/ThermalServicesLibNull.inf
@@ -48,8 +83,8 @@
   ConsoleMsgLib|PcBdsPkg/Library/ConsoleMsgNullLib/ConsoleMsgNullLib.inf
   GraphicsConsoleHelperLib|PcBdsPkg/Library/GraphicsConsoleHelperLib/GraphicsConsoleHelper.inf
   DeviceStateLib|MsCorePkg/Library/DeviceStateLib/DeviceStateLib.inf
-  DeviceBootManagerLib|iMXPlatformPkg/Library/DeviceBootManagerLib/DeviceBootManagerLib.inf
- #DeviceBootManagerLib|PcBdsPkg/Library/DeviceBootManagerLib/DeviceBootManagerLib.inf
+  #DeviceBootManagerLib|iMXPlatformPkg/Library/DeviceBootManagerLib/DeviceBootManagerLib.inf
+  DeviceBootManagerLib|PcBdsPkg/Library/DeviceBootManagerLib/DeviceBootManagerLib.inf
   UiRectangleLib|MsGraphicsPkg/Library/BaseUiRectangleLib/BaseUiRectangleLib.inf
   DisplayDeviceStateLib|MsGraphicsPkg/Library/ColorBarDisplayDeviceStateLib/ColorBarDisplayDeviceStateLib.inf
   MsAltBootLib|OemPkg/Library/MsAltBootLib/MsAltBootLib.inf
@@ -127,6 +162,7 @@
   gEfiMdeModulePkgTokenSpaceGuid.PcdTurnOffUsbLegacySupport|TRUE
 
 [PcdsFixedAtBuild.common]
+  gMsGraphicsPkgTokenSpaceGuid.PcdUiThemeInDxe|TRUE
   gEfiMdeModulePkgTokenSpaceGuid.PcdBootManagerInBootOrder|TRUE
   gEfiMdeModulePkgTokenSpaceGuid.PcdPlatformRecoverySupported|FALSE
   gEfiMdeModulePkgTokenSpaceGuid.PcdBootManagerMenuFile|{ 0x8A, 0x70, 0x42, 0x40, 0x2D, 0x0F, 0x23, 0x48, 0xAC, 0x60, 0x0D, 0x77, 0xB3, 0x11, 0x18, 0x89 }
@@ -228,7 +264,7 @@
 # Components Section - list of all EDK II Modules needed by this Platform
 #
 ################################################################################
-[Components.common]
+[Components.AARCH64]
   #
   # PEI Phase modules
   #
@@ -333,16 +369,35 @@
       NULL|MdeModulePkg/Library/BootMaintenanceManagerUiLib/BootMaintenanceManagerUiLib.inf
   }
 
-[Components.AARCH64]
+#[Components.AARCH64]
   #
   # EBC
   #
   MdeModulePkg/Universal/EbcDxe/EbcDxe.inf
-
+ # MsGraphicsPkg/MsUiTheme/Pei/MsUiThemePpi.inf
   # Surface FrontPage application.
   OemPkg/FrontPage/FrontPage.inf
 
   # Surface Boot Manager (Menu) application
   OemPkg/BootMenu/BootMenu.inf
 
-  #PcBdsPkg/MsBootPolicy/MsBootPolicy.inf
+  PcBdsPkg/MsBootPolicy/MsBootPolicy.inf
+
+  MdeModulePkg/Universal/BootManagerPolicyDxe/BootManagerPolicyDxe.inf
+  #
+  # Remote/IT/Admin Settings
+  #
+  MdeModulePkg/Universal/RegularExpressionDxe/RegularExpressionDxe.inf
+  DfciPkg/SettingsManager/SettingsManagerDxe.inf {
+        #Platform should add all it settings libs here
+  <LibraryClasses>
+        NULL|ZeroTouchPkg/Library/ZeroTouchSettings/ZeroTouchSettings.inf
+        NULL|DfciPkg/Library/DfciSettingsLib/DfciSettingsLib.inf
+        DfciSettingPermissionLib|DfciPkg/Library/DfciSettingPermissionLib/DfciSettingPermissionLib.inf
+  <PcdsFeatureFlag>
+     gDfciPkgTokenSpaceGuid.PcdSettingsManagerInstallProvider|TRUE
+  }
+
+  DfciPkg/IdentityAndAuthManager/IdentityAndAuthManagerDxe.inf
+  DfciPkg/DfciManager/DfciManager.inf
+

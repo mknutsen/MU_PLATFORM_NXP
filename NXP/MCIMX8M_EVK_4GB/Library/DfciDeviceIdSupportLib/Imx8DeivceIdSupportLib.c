@@ -32,6 +32,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <PiDxe.h>
 #include <Library/DfciDeviceIdSupportLib.h>
 #include <Library/BaseLib.h>
+#include <Library/MemoryAllocationLib.h>
 #include <Library/BaseMemoryLib.h>
 #include <Library/DebugLib.h>
 

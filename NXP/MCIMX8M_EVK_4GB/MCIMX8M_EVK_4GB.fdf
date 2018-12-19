@@ -85,18 +85,23 @@ READ_STATUS        = TRUE
 READ_LOCK_CAP      = TRUE
 READ_LOCK_STATUS   = TRUE
 FvNameGuid         = B73FE497-B92E-416e-8326-45AD0D270092
-
+  INF iMX8Pkg/Drivers/iMX8Dxe/iMX8Dxe.inf
   INF MdeModulePkg/Core/Dxe/DxeMain.inf
   INF MdeModulePkg/Universal/PCD/Dxe/Pcd.inf
+  INF DfciPkg/SettingsManager/SettingsManagerDxe.inf
   INF MsGraphicsPkg/MsUiTheme/Dxe/MsUiThemeProtocol.inf
   INF OemPkg/BootMenu/BootMenu.inf
   INF OemPkg/FrontPage/FrontPage.inf
-  #INF PcBdsPkg/MsBootPolicy/MsBootPolicy.inf
+  INF PcBdsPkg/MsBootPolicy/MsBootPolicy.inf
 
   #
   # PI DXE Drivers producing Architectural Protocols (EFI Services)
   #
   INF ArmPkg/Drivers/CpuDxe/CpuDxe.inf
+  INF MdeModulePkg/Universal/BootManagerPolicyDxe/BootManagerPolicyDxe.inf
+  INF MdeModulePkg/Universal/RegularExpressionDxe/RegularExpressionDxe.inf
+  INF DfciPkg/IdentityAndAuthManager/IdentityAndAuthManagerDxe.inf
+  INF DfciPkg/DfciManager/DfciManager.inf
 
   INF MdeModulePkg/Core/RuntimeDxe/RuntimeDxe.inf
   INF ArmPkg/Drivers/ArmGic/ArmGicDxe.inf
@@ -172,8 +177,8 @@ FvNameGuid         = B73FE497-B92E-416e-8326-45AD0D270092
 
   #
   # iMX8M platform driver
-  #
-  INF iMX8Pkg/Drivers/iMX8Dxe/iMX8Dxe.inf
+  # Moved up
+
 
   #
   # SMBIOS/DMI
