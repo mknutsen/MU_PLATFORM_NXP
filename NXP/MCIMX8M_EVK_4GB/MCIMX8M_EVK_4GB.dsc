@@ -39,6 +39,7 @@
 !include Silicon/ARM/NXP/iMX8Pkg/iMX8CommonDsc.inc
 
 [LibraryClasses.common]
+
   IntrinsicLib|CryptoPkg/Library/IntrinsicLib/IntrinsicLib.inf
   DfciUiSupportLib|DfciPkg/Library/DfciUiSupportLibNull/DfciUiSupportLibNull.inf
   DfciRecoveryLib|DfciPkg/Library/DfciRecoveryLib/DfciRecoveryLib.inf
@@ -297,8 +298,8 @@
   MdeModulePkg/Universal/Console/TerminalDxe/TerminalDxe.inf
   MdeModulePkg/Universal/SerialDxe/SerialDxe.inf
 
-  MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf
-  #MdeModulePkg/Universal/Variable/EmuRuntimeDxe/EmuVariableRuntimeDxe.inf
+  #MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf
+  MdeModulePkg/Universal/Variable/EmuRuntimeDxe/EmuVariableRuntimeDxe.inf
   MdeModulePkg/Universal/FaultTolerantWriteDxe/FaultTolerantWriteDxe.inf
 
   #
@@ -401,4 +402,7 @@
 
   DfciPkg/IdentityAndAuthManager/IdentityAndAuthManagerDxe.inf
   DfciPkg/DfciManager/DfciManager.inf
-
+  MdeModulePkg/Universal/Variable/VarLockNullDxe/VarLockNullDxe.inf
+  MsGraphicsPkg/SimpleWindowManagerDxe/SimpleWindowManagerDxe.inf
+  MsGraphicsPkg/RenderingEngineDxe/RenderingEngineDxe.inf
+  MsGraphicsPkg/GopOverrideDxe/GopOverrideDxe.inf
