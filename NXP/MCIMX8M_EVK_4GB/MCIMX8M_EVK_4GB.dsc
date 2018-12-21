@@ -48,7 +48,7 @@
   BaseCryptLib|CryptoPkg/Library/BaseCryptLib/BaseCryptLib.inf
   DfciDeviceIdSupportLib|NXP/MCIMX8M_EVK_4GB/Library/DfciDeviceIdSupportLib/Imx8DeivceIdSupportLib.inf
   #MsPlatformDevicesLib|PcBdsPkg/Library/MsPlatformDevicesNullLib/MsPlatformDevicesNullLib.inf
-  MsPlatformDevicesLib|XP/MCIMX8M_EVK_4GB/Library/MsPlatformDevicesLib/MsPlatformDevicesLib.inf
+  MsPlatformDevicesLib|NXP/MCIMX8M_EVK_4GB/Library/MsPlatformDevicesLib/MsPlatformDevicesLib.inf
   XmlTreeQueryLib|XmlSupportPkg/Library/XmlTreeQueryLib/XmlTreeQueryLib.inf
   XmlTreeLib|XmlSupportPkg/Library/XmlTreeLib/XmlTreeLib.inf
   DfciV1SupportLib|DfciPkg/Library/DfciV1SupportLibNull/DfciV1SupportLibNull.inf
@@ -119,7 +119,7 @@
   RealTimeClockLib|iMXPlatformPkg/Library/VirtualRealTimeClockLib/VirtualRealTimeClockLib.inf
 
   CapsuleLib|MdeModulePkg/Library/DxeCapsuleLibNull/DxeCapsuleLibNull.inf
-  CustomizedDisplayLib|MdeModulePkg/Library/CustomizedDisplayLib/CustomizedDisplayLib.inf
+#  CustomizedDisplayLib|MdeModulePkg/Library/CustomizedDisplayLib/CustomizedDisplayLib.inf
 
   # USB Requirements
   UefiUsbLib|MdePkg/Library/UefiUsbLib/UefiUsbLib.inf
@@ -365,12 +365,12 @@
     <PcdsFixedAtBuild>
       gPcBdsPkgTokenSpaceGuid.PcdBdsBootPolicy|TRUE
   }
-  MdeModulePkg/Application/UiApp/UiApp.inf {
-    <LibraryClasses>
-      NULL|MdeModulePkg/Library/DeviceManagerUiLib/DeviceManagerUiLib.inf
-      NULL|MdeModulePkg/Library/BootManagerUiLib/BootManagerUiLib.inf
-      NULL|MdeModulePkg/Library/BootMaintenanceManagerUiLib/BootMaintenanceManagerUiLib.inf
-  }
+ # MdeModulePkg/Application/UiApp/UiApp.inf {
+ #   <LibraryClasses>
+ #     NULL|MdeModulePkg/Library/DeviceManagerUiLib/DeviceManagerUiLib.inf
+ #     NULL|MdeModulePkg/Library/BootManagerUiLib/BootManagerUiLib.inf
+ #     NULL|MdeModulePkg/Library/BootMaintenanceManagerUiLib/BootMaintenanceManagerUiLib.inf
+ # }
 
 #[Components.AARCH64]
   #
@@ -407,3 +407,5 @@
   MsGraphicsPkg/SimpleWindowManagerDxe/SimpleWindowManagerDxe.inf
   MsGraphicsPkg/RenderingEngineDxe/RenderingEngineDxe.inf
   MsGraphicsPkg/GopOverrideDxe/GopOverrideDxe.inf
+  MsGraphicsPkg/OnScreenKeyboardDxe/OnScreenKeyboardDxe.inf
+

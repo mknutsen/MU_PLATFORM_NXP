@@ -131,13 +131,15 @@ FvNameGuid         = B73FE497-B92E-416e-8326-45AD0D270092
   #
   # Multiple Console IO support
   #
+  INF MsGraphicsPkg/OnScreenKeyboardDxe/OnScreenKeyboardDxe.inf
+  INF MsGraphicsPkg/RenderingEngineDxe/RenderingEngineDxe.inf
   INF ArmPlatformPkg/Drivers/LcdGraphicsOutputDxe/LcdGraphicsOutputDxe.inf
   INF MsGraphicsPkg/GopOverrideDxe/GopOverrideDxe.inf
   INF MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
   INF MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf
   INF MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf
   INF MsGraphicsPkg/SimpleWindowManagerDxe/SimpleWindowManagerDxe.inf
-  INF MsGraphicsPkg/RenderingEngineDxe/RenderingEngineDxe.inf
+  #INF MsGraphicsPkg/RenderingEngineDxe/RenderingEngineDxe.inf
   INF MdeModulePkg/Universal/Console/TerminalDxe/TerminalDxe.inf
   INF MdeModulePkg/Universal/SerialDxe/SerialDxe.inf
 
@@ -194,7 +196,7 @@ FvNameGuid         = B73FE497-B92E-416e-8326-45AD0D270092
   INF MdeModulePkg/Universal/DisplayEngineDxe/DisplayEngineDxe.inf
   INF MdeModulePkg/Universal/SetupBrowserDxe/SetupBrowserDxe.inf
   INF MdeModulePkg/Universal/BdsDxe/BdsDxe.inf
-  INF MdeModulePkg/Application/UiApp/UiApp.inf
+  #INF MdeModulePkg/Application/UiApp/UiApp.inf
 
   #
   # EBC
