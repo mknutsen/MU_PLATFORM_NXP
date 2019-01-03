@@ -280,7 +280,7 @@
       PcdLib|MdePkg/Library/BasePcdLibNull/BasePcdLibNull.inf
       NULL|MdeModulePkg/Library/DxeCrc32GuidedSectionExtractLib/DxeCrc32GuidedSectionExtractLib.inf
   }
-
+  MsGraphicsPkg/DisplayEngineDxe/DisplayEngineDxe.inf
   #
   # Architectural Protocols
   #
@@ -347,15 +347,12 @@
   #
   MdeModulePkg/Universal/SmbiosDxe/SmbiosDxe.inf
   NXP/MCIMX8M_EVK_4GB/Drivers/SmbiosPlatformDxe/SmbiosPlatformDxe.inf
-  MsGraphicsPkg/MsUiTheme/Dxe/MsUiThemeProtocol.inf {
-    <LibraryClasses>
-       MsUiThemeCopyLib|MsGraphicsPkg/Library/MsUiThemeCopyLib/MsUiThemeCopyLib.inf
-  }
+  MsGraphicsPkg/MsUiTheme/Dxe/MsUiThemeProtocol.inf
   #
   # Bds
   #
   MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf
-  MdeModulePkg/Universal/DisplayEngineDxe/DisplayEngineDxe.inf
+ # MdeModulePkg/Universal/DisplayEngineDxe/DisplayEngineDxe.inf WRONG ONE
   MdeModulePkg/Universal/SetupBrowserDxe/SetupBrowserDxe.inf
   MdeModulePkg/Universal/BdsDxe/BdsDxe.inf {
     <LibraryClasses>
