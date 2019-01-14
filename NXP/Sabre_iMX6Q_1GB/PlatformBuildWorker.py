@@ -31,9 +31,9 @@ class PlatformBuilder(UefiBuilder):
         self.env.SetValue("CONF_TEMPLATE_DIR", "NXP", "Conf template directory hardcoded - temporary and should go away")
 
         self.env.SetValue("BLD_*_SHIP_MODE", "FALSE", "PROFILE VALUE")
-        self.env.SetValue("ACTIVE_PLATFORM", "NXP/MCIMX8M_EVK_4GB/MCIMX8M_EVK_4GB.dsc", "Platform Hardcoded")
+        self.env.SetValue("ACTIVE_PLATFORM", "NXP/Sabre_iMX6Q_1GB/Sabre_iMX6Q_1GB.dsc", "Platform Hardcoded")
         self.env.SetValue("PRODUCT_NAME", "MCIMX8M_EVK_4GB", "Platform Hardcoded")
-        self.env.SetValue("TARGET_ARCH", "AARCH64", "Platform Hardcoded")
+        self.env.SetValue("TARGET_ARCH", "ARM", "Platform Hardcoded")
         self.env.SetValue("BLD_*_DEBUG_MSG_ENABLE", "TRUE", "flag to enable debug message")
         self.env.SetValue("BLD_RELEASE_PERF_TRACE_ENABLE", "FALSE", "perf tracing off by default")
         self.env.SetValue("BLD_DEBUG_PERF_TRACE_ENABLE", "FALSE", "perf tracing off by default")
