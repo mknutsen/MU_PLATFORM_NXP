@@ -39,7 +39,7 @@ Device (USB2)
         DSBM, 32,       // UOG_USBMOD
     }
 
-    Name (REG, 0x0);    // Declare register read variable
+    Name (REG, 0x0)    // Declare register read variable
     Method (_UBF, 0x0, NotSerialized)
     {
         //
