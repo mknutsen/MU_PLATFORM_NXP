@@ -38,7 +38,6 @@
 
 [LibraryClasses.common]
   ArmPlatformLib|$(BOARD_DIR)/Library/iMX6BoardLib/iMX6BoardLib.inf
-
 [Components.common]
   # Display Support
 !if $(CONFIG_HEADLESS) == FALSE
@@ -129,7 +128,7 @@ giMX6TokenSpaceGuid.PcdMemoryDeviceLocation|L"On SoM"
   giMXPlatformTokenSpaceGuid.PcdSdhc2Base|0x02194000
   giMXPlatformTokenSpaceGuid.PcdSdhc3Base|0x02198000
   giMXPlatformTokenSpaceGuid.PcdSdhc4Base|0x0219C000
-  
+
   #
   # SDCard Slot (uSDHC3)
   #---------------------------------------------------

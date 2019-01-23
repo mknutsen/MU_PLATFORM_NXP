@@ -191,7 +191,7 @@ Device(URS0)
            DSBM, 32,       // UOG_USBMOD
        }
 
-       Name (REG, 0x0);    // Declare register read variable
+       Name (REG, 0x0)    // Declare register read variable
        Method (_UBF, 0x0, NotSerialized) {
            //
            // Reset handled by driver so no reset required here
@@ -225,7 +225,7 @@ Device(URS0)
            DSBM, 32,       // UOG_USBMOD
        }
 
-       Name (REG, 0x0);    // Declare register read variable
+       Name (REG, 0x0)    // Declare register read variable
        Method (_UBF, 0x0, NotSerialized) {
            //
            // Reset handled by driver so no reset required here
