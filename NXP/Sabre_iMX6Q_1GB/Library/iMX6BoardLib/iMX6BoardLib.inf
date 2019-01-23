@@ -31,13 +31,14 @@
   iMXPlatformPkg/iMXPlatformPkg.dec
   iMX6Pkg/iMX6Pkg.dec
   Microsoft/OpteeClientPkg/OpteeClientPkg.dec
-#  #StdLib/StdLib.dec
+  #StdLib/StdLib.dec
 
 [LibraryClasses]
   IoLib
   ArmLib
   MemoryAllocationLib
   SerialPortLib
+  iMX6AudioLib
   iMX6ClkPwrLib
   iMX6UsbPhyLib
 
