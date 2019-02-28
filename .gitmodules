@@ -12,7 +12,7 @@
 	branch = personal/maknutse/frontpage
 [submodule "Silicon/ARM/MU_TIANO"]
 	path = Silicon/ARM/MU_TIANO
-	url = https://windowspartners.visualstudio.com/MSCoreUEFI/_git/mu_silicon_arm_tiano
+	url = https://windowspartners.visualstudio.com/MSCoreUEFI/_git/mu_silicon_tiano_arm
 	branch = personal/maknutse/frontpage
 [submodule "Silicon/ARM/NXP"]
 	path = Silicon/ARM/NXP
