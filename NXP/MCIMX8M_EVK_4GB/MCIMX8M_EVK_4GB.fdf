@@ -135,7 +135,7 @@ FvNameGuid         = B73FE497-B92E-416e-8326-45AD0D270092
   INF MsGraphicsPkg/OnScreenKeyboardDxe/OnScreenKeyboardDxe.inf
   INF MsGraphicsPkg/RenderingEngineDxe/RenderingEngineDxe.inf
   INF ArmPlatformPkg/Drivers/LcdGraphicsOutputDxe/LcdGraphicsOutputDxe.inf
-  INF MsGraphicsPkg/GopOverrideDxe/GopOverrideDxe.inf
+  #INF MsGraphicsPkg/GopOverrideDxe/GopOverrideDxe.inf
   INF MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
   INF MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf
   INF MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf
